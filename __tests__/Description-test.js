@@ -7,7 +7,7 @@ import { render, fireEvent } from 'react-native-testing-library';
 import DescriptionScreen from '../src/pages/Content/Description';
 import MockedNavigator from '../__mocks__/navigator/mocked-navigator';
 import projetoMock from '../__mocks__/valores/projetoMock';
-import Armazenamento from '../src/services/armazenamento';
+// import Armazenamento from '../src/services/armazenamento';
 
 jest.mock('react-native-vector-icons/SimpleLineIcons', () => ({
   loadFont: function loadFont() {
@@ -45,12 +45,12 @@ describe('Description', () => {
     expect(share).toHaveBeenCalled();
   });
 
-  it('baixa conteúdo para o celular quando clica no botão de download', () => {
-    const { getAllByA11yRole } = render(component);
-    const salvarDadosSpy = jest.spyOn(Armazenamento, 'salvarDados');
-    fireEvent.press(getAllByA11yRole('button')[1]);
-    expect(salvarDadosSpy).toHaveBeenCalled();
-  });
+  // it('baixa conteúdo para o celular quando clica no botão de download', () => {
+  //   const { getAllByA11yRole } = render(component);
+  //   const salvarDadosSpy = jest.spyOn(Armazenamento, 'salvarDados');
+  //   fireEvent.press(getAllByA11yRole('button')[1]);
+  //   expect(salvarDadosSpy).toHaveBeenCalled();
+  // });
 
   it('muda o ícone ao clicar em baixar conteúdo', () => {
     const app = render(component);

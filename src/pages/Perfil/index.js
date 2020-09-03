@@ -19,7 +19,7 @@ export default function PerfilScreen() {
     const dadosDecodificados = jwtDecode(jwtToken.access_token);
     const {
       // eslint-disable-next-line camelcase
-      given_name, family_name, name, email, CPF, CIDADE
+      given_name, family_name, name, email, CPF, CIDADE, TELEFONE
     } = dadosDecodificados;
     return {
       nome: given_name,
@@ -27,7 +27,8 @@ export default function PerfilScreen() {
       nomeCompleto: name,
       email,
       cpf: CPF,
-      cidade: CIDADE
+      cidade: CIDADE,
+      telefone: TELEFONE
     };
   };
 
@@ -98,7 +99,7 @@ export default function PerfilScreen() {
   return (
     <View style={estilos.margem}>
       <CabecalhoPerfil nome={dadosUsuario.nome} />
-      <MenuPerfil titulo="Meu dados">
+      <MenuPerfil titulo="Informações pessoais">
         <DadosUsuario dados={dadosUsuario} />
       </MenuPerfil>
       <MenuPerfil titulo="Privacidade">

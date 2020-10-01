@@ -17,6 +17,11 @@ jobs:
         run: yarn install
       - name: Android folder
         run: cd android && ./gradlew assembleRelease
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: app-release.apk
+          path: android/app/build/outputs/apk/release/
 
 
      

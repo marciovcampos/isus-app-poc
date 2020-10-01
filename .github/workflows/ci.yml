@@ -8,18 +8,13 @@ jobs:
     name: Build Android
     runs-on: ubuntu-latest
     steps:
-      - name: Install dependencies
-        uses: actions/setup-node@v1
+
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
           node-version: '12'
-      - run: yarn install
-      - name: Build Android Release
-        run: |
-          cd android && ./gradlew assembleRelease 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: app-release.apk
-          path: android/app/build/outputs/apk/release/
-      
+      - name: Install dependencies
+        run: yarn install
+
+
      

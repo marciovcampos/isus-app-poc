@@ -11,21 +11,9 @@ jobs:
       - uses: actions/checkout@v2.1.0
       - uses: actions/setup-node@v1
         with:
-          node-version: '12'
-      - name: Imprime Novo Segredo
-        env:
-          NOVOSEGREDO: ${{ secrets.NOVOSEGREDO }}
-        run: echo "$NOVOSEGREDO"  
-      - name: Imprime Variavel       
-        run: echo '${{ secrets.NOVOSEGREDO }}' 
-      - name: Imprime Versao Java       
-        run: java -version 
-      - name: Imprime Versao Gradlew       
-        run: cd android && ./gradlew --version 
-      - name: Install dependencies
-        run: yarn install 
+          node-version: '12'    
       - name: Build Android Release        
-        run: cd android && ENVFILE=.env.ci ./gradlew assembleRelease - ONE_SIGNAL_KEY='${{ secrets.ONE_SIGNAL_PROJECT_NUMBER }}' - ONE_SIGNAL_PROJECT_NUMBER='${{ secrets.ONE_SIGNAL_PROJECT_NUMBER }}' - CODE_PUSH_DEPLOYMENT_KEY='${{ secrets.CODE_PUSH_DEPLOYMENT_KEY }}' - API_URL='${{ secrets.API_URL }}'                 
+        run: cd android && ./gradlew assembleRelease        
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:

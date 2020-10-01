@@ -15,7 +15,12 @@ jobs:
       - name: Install dependencies
         run: yarn install     
       - name: Build Android Release        
-        run: cd android && ENVFILE=.env.ci ./gradlew assembleRelease        
+        run: cd android && ENVFILE=.env.ci ./gradlew assembleRelease  
+        env:
+          ONE_SIGNAL_KEY: ${{ secrets.ONE_SIGNAL_KEY }}
+          ONE_SIGNAL_PROJECT_NUMBER: ${{ secrets.ONE_SIGNAL_PROJECT_NUMBER }}
+          CODE_PUSH_DEPLOYMENT_KEY: ${{ secrets.CODE_PUSH_DEPLOYMENT_KEY }}
+          API_URL: ${{ secrets.API_URL }}      
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:

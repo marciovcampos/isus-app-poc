@@ -12,10 +12,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12'
-      - name: Install dependencies
-        run: yarn install   
       - name: Imprime Novo Segredo
-        run: echo "$NOVOSEGREDO"  
+        run: echo "$env:NOVOSEGREDO"  
+      - name: Install dependencies
+        run: yarn install 
       - name: Build Android Release
         run: cd android && ENVFILE=.env.ci ./gradlew clean && ENVFILE=.env.ci ./gradlew bundleRelease --info
         env:

@@ -13,8 +13,10 @@ jobs:
         with:
           node-version: '12'
       - run: yarn install
-      - name: Run tests
-        run: |
-          yarn test
+      - name: Run test
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - run: yarn test
       
      

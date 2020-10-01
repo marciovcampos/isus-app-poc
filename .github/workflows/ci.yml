@@ -16,6 +16,8 @@ jobs:
         env:
           NOVOSEGREDO: ${{ secrets.NOVOSEGREDO }}
         run: echo "$NOVOSEGREDO"  
+      - name: Imprime Variavel       
+        run: echo '${{ secrets.NOVOSEGREDO }}' 
       - name: Install dependencies
         run: yarn install 
       - name: Build Android Release

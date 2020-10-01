@@ -14,7 +14,7 @@ jobs:
           node-version: '12'
       - name: Imprime Novo Segredo
         env:
-        NOVOSEGREDO: ${{ secrets.NOVOSEGREDO }}
+          NOVOSEGREDO: ${{ secrets.NOVOSEGREDO }}
         run: echo "$NOVOSEGREDO"  
       - name: Install dependencies
         run: yarn install 

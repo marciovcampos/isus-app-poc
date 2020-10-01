@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: '12'    
       - name: Build Android Release        
-        run: cd android && ./gradlew assembleRelease        
+        run: cd android && ENVFILE=.env.ci ./gradlew assembleRelease --info        
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:

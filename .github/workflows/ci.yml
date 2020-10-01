@@ -19,13 +19,13 @@ jobs:
           cd ios && pod install
       - name: Build app
         run: |       
-          xcodebuild -workspace myapp.xcworkspace -scheme myapp archive -archivePath myapp.xcarchive -allowProvisioningUpdates
-          xcodebuild -exportArchive -archivePath ./myapp.xcarchive -exportPath . -exportOptionsPlist myapp/Info.plist
-          mv myapp.ipa ../myapp.ipa
+          xcodebuild -workspace isusapp.xcworkspace -scheme isusapp archive -archivePath isusapp.xcarchive -allowProvisioningUpdates
+          xcodebuild -exportArchive -archivePath ./isusapp.xcarchive -exportPath . -exportOptionsPlist isusapp/Info.plist
+          mv isusapp.ipa ../isusapp.ipa
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
-          name: myapp.ipa
+          name: isusapp.ipa
           path: ios/build/
   android:
     name: Build Android

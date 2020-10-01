@@ -5,14 +5,13 @@ on:
       - develop
 jobs:
   android:
+    name: Build Android
     runs-on: ubuntu-latest
-    steps: 
-      - name: Install yarn dependencies
-        uses: actions/checkout@v2.1.0
-        run: |
-          yarn install
-    - name: Run tests
-        uses: actions/checkout@v2.1.0
-        run: |
-          yarn test
+    steps:
+      - name: Install dependencies
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+        run: yarn install
+      
      

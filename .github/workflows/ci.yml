@@ -13,9 +13,11 @@ jobs:
         with:
           node-version: '12'
       - name: Install dependencies
-        run: yarn install     
+        run: yarn install   
+      - name: Imprime Novo Segredo
+        run: echo "$NOVOSEGREDO"  
       - name: Build Android Release
-        run: cd android && ENVFILE=.env.ci ./gradlew clean && ENVFILE=.env.ci ./gradlew bundleRelease
+        run: cd android && ENVFILE=.env.ci ./gradlew clean && ENVFILE=.env.ci ./gradlew bundleRelease --info
         env:
           ONE_SIGNAL_KEY: ${{ secrets.ONE_SIGNAL_KEY }} 
           ONE_SIGNAL_PROJECT_NUMBER: ${{ secrets.ONE_SIGNAL_PROJECT_NUMBER }} 

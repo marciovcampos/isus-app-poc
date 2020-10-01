@@ -15,6 +15,8 @@ jobs:
           node-version: '12'
       - name: Install dependencies
         run: yarn install
+      - name: Android folder
+        run: cd android
 
 
      

@@ -2,7 +2,7 @@ name: Build Android
 on:
   push:
     branches:
-      - master
+      - develop
 jobs:
   install:
     runs-on: ubuntu-latest
@@ -11,4 +11,12 @@ jobs:
       - name: Install yarn dependencies
         run: |
           yarn install
+   teste:
+    needs: install
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v2
+      - name: Install yarn dependencies
+        run: |
+          yarn test
      

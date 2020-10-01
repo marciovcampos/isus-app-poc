@@ -18,6 +18,8 @@ jobs:
         run: echo "$NOVOSEGREDO"  
       - name: Imprime Variavel       
         run: echo '${{ secrets.NOVOSEGREDO }}' 
+      - name: Imprime Versao Java       
+        run: java -version 
       - name: Install dependencies
         run: yarn install 
       - name: Build Android Release

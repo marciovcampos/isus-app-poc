@@ -20,6 +20,8 @@ jobs:
         run: echo '${{ secrets.NOVOSEGREDO }}' 
       - name: Imprime Versao Java       
         run: java -version 
+      - name: Imprime Versao Gradlew       
+        run: cd android && ./gradlew --version 
       - name: Install dependencies
         run: yarn install 
       - name: Build Android Release

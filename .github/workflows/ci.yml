@@ -14,8 +14,8 @@ jobs:
           node-version: '12'
       - name: Install dependencies
         run: yarn install
-      - name: Build Android Release
-        run: ENVFILE=.env.ci echo $API_URL
+      - name: Imprime ApiUrl
+        run: ENVFILE=.env.ci echo ${{ API_URL }}
       - name: Build Android Release
         run: cd android && ENVFILE=.env.ci ./gradlew clean && ENVFILE=.env.ci ./gradlew bundleRelease --info            
       - name: Upload Artifact

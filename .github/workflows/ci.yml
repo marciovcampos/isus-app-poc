@@ -8,15 +8,14 @@ jobs:
     name: Build Android
     runs-on: ubuntu-latest
     steps:
-
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2.1.0
       - uses: actions/setup-node@v1
         with:
           node-version: '12'
       - name: Install dependencies
         run: yarn install
       - name: Build Android Release
-        run: cd android && ./gradlew clean && ENVFILE=.env.ci ./gradlew assembleRelease        
+        run: cd android && ./gradlew clean && ENVFILE=.env.ci ./gradlew bundleRelease        
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:

@@ -13,10 +13,13 @@ jobs:
         with:
           node-version: '12'
       - run: yarn install
-      - name: Run test
-        uses: actions/setup-node@v1
+      - name: Build Android Release
+        run: |
+          cd android && ./gradlew assembleRelease 
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
         with:
-          node-version: '12'
-      - run: yarn test
+          name: app-release.apk
+          path: android/app/build/outputs/apk/release/
       
      

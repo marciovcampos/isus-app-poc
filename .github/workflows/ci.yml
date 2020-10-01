@@ -15,7 +15,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Build Android Release
-        run: cd android && ./gradlew clean && ENVFILE=.env.ci ./gradlew bundleRelease             
+        run: cd android && ENVFILE=.env.ci ./gradlew clean && ENVFILE=.env.ci ./gradlew bundleRelease             
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:

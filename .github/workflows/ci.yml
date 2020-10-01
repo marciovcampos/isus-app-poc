@@ -5,7 +5,7 @@ on:
       - develop
 jobs:
   build-ios:
-    needs: Build iOS
+    name: Build iOS
     runs-on: macos-latest
     steps: 
       - uses: actions/checkout@v2

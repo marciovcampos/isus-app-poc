@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - develop
-jobs:  
+jobs:
   android:
     name: Build Android
     runs-on: ubuntu-latest
@@ -13,14 +13,19 @@ jobs:
         with:
           node-version: '12'
       - name: Install dependencies
-        run: yarn install     
-      - name: Build Android Release        
-        run: cd android && ./gradlew assembleRelease - ONE_SIGNAL_KEY='${{ secrets.ONE_SIGNAL_KEY }}' - ONE_SIGNAL_PROJECT_NUMBER='${{ secrets.ONE_SIGNAL_PROJECT_NUMBER }}' - CODE_PUSH_DEPLOYMENT_KEY='${{ secrets.CODE_PUSH_DEPLOYMENT_KEY }}' - API_URL='${{ secrets.API_URL }}'   
+        run: yarn install
+      - name: Make envFile
+        uses: SpicyPizza/create-envfile@v1
+        with:
+          envkey_ONE_SIGNAL_KEY: ${{ secrets.ONE_SIGNAL_KEY }}
+          envkey_ONE_SIGNAL_PROJECT_NUMBER: ${{ secrets.ONE_SIGNAL_PROJECT_NUMBER }}
+          envkey_CODE_PUSH_DEPLOYMENT_KEY: ${{ secrets.CODE_PUSH_DEPLOYMENT_KEY }}
+          envkey_API_URL: ${{ secrets.API_URL }}
+          file_name: .env
+      - name: Build Android Release
+        run: cd android && ./gradlew assembleRelease'
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
           name: app-release.apk
           path: android/app/build/outputs/apk/release/
-
-
-     

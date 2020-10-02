@@ -1,15 +1,12 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
-android {
-  ndkversion "21.3.6528147"
-}
-
 buildscript {
     ext {
         buildToolsVersion = "28.0.3"
         minSdkVersion = 21
         compileSdkVersion = 28
         targetSdkVersion = 28
+        ndkversion "21.3.6528147"
     }
     repositories {
         google()

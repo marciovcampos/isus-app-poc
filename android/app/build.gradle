@@ -128,9 +128,10 @@ def jscFlavor = 'org.webkit:android-jsc:+'
  * and the benefits of using Hermes will therefore be sharply reduced.
  */
 def enableHermes = project.ext.react.get("enableHermes", false);
-android.ndkversion rootProject.ext.ndkversion
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
+    ndkversion rootProject.ext.ndkversion
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -144,6 +145,11 @@ android {
         versionName "3.11.0"
         resValue "string", "build_config_package", "com.esp.isus"
         manifestPlaceholders = [onesignal_app_id: project.env.get("ONE_SIGNAL_KEY"), onesignal_google_project_number: project.env.get("ONE_SIGNAL_PROJECT_NUMBER")]
+
+      ndk {
+        moduleName "liblfrfid"
+        abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+      }
     }
     splits {
         abi {

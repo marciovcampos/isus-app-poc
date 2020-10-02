@@ -3,30 +3,7 @@ on:
   push:
     branches:
       - develop
-jobs:
-  build-ios:
-    name: Build iOS
-    runs-on: macos-latest
-    steps: 
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12'
-      - name: Install dependencies
-        run: yarn install
-      - name: Install pod dependencies
-        run: |
-          cd ios && pod install
-      - name: Build app
-        run: |       
-          xcodebuild -workspace isusapp.xcworkspace -scheme isusapp archive -archivePath isusapp.xcarchive -allowProvisioningUpdates
-          xcodebuild -exportArchive -archivePath ./isusapp.xcarchive -exportPath . -exportOptionsPlist isusapp/Info.plist
-          mv isusapp.ipa ../isusapp.ipa
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: isusapp.ipa
-          path: ios/build/
+jobs:  
   android:
     name: Build Android
     runs-on: ubuntu-latest
@@ -38,12 +15,9 @@ jobs:
       - name: Install dependencies
         run: yarn install     
       - name: Build Android Release        
-        run: cd android && ENVFILE=.env.ci ./gradlew assembleRelease  
+        run: cd android && ./gradlew assembleRelease  
         env:
-          ONE_SIGNAL_KEY: ${{ secrets.ONE_SIGNAL_KEY }}
-          ONE_SIGNAL_PROJECT_NUMBER: ${{ secrets.ONE_SIGNAL_PROJECT_NUMBER }}
-          CODE_PUSH_DEPLOYMENT_KEY: ${{ secrets.CODE_PUSH_DEPLOYMENT_KEY }}
-          API_URL: ${{ secrets.API_URL }}      
+          ENVFILE: .env.ci    
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:

@@ -131,7 +131,6 @@ def enableHermes = project.ext.react.get("enableHermes", false);
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    ndkversion rootProject.ext.ndkversion
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -141,6 +140,7 @@ android {
         applicationId "com.esp.isus"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
+        ndkversion rootProject.ext.ndkversion
         versionCode 71
         versionName "3.11.0"
         resValue "string", "build_config_package", "com.esp.isus"

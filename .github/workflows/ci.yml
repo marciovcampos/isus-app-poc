@@ -4,6 +4,29 @@ on:
     branches:
       - develop
 jobs:
+  # ios:
+  #   name: Build iOS
+  #   runs-on: macos-latest
+  #   steps: 
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: '12'
+  #     - name: Install dependencies
+  #       run: yarn install
+  #     - name: Install pod dependencies
+  #       run: |
+  #         cd ios && pod install
+  #     - name: Build app
+  #       run: |       
+  #         cd ios && xcodebuild -workspace isusapp.xcworkspace -scheme isusapp archive -archivePath isusapp.xcarchive -allowProvisioningUpdates
+  #         xcodebuild -exportArchive -archivePath ./githubPoc.xcarchive -exportPath . -exportOptionsPlist isusapp/Info.plist
+  #         mv isusapp.ipa ../isusapp.ipa
+  #     - name: Upload Artifact
+  #       uses: actions/upload-artifact@v1
+  #       with:
+  #         name: isusapp.ipa
+  #         path: ios/build/
   android:
     name: Build Android
     runs-on: ubuntu-latest
@@ -31,26 +54,4 @@ jobs:
         with:
           name: app-release.apk
           path: android/app/build/outputs/apk/release/
-  ios:
-    name: Build iOS
-    runs-on: macos-latest
-    steps: 
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12'
-      - name: Install dependencies
-        run: yarn install
-      - name: Install pod dependencies
-        run: |
-          cd ios && pod install
-      - name: Build app
-        run: |       
-          cd ios && xcodebuild -workspace isusapp.xcworkspace -scheme isusapp archive -archivePath isusapp.xcarchive -allowProvisioningUpdates
-          xcodebuild -exportArchive -archivePath ./githubPoc.xcarchive -exportPath . -exportOptionsPlist isusapp/Info.plist
-          mv isusapp.ipa ../isusapp.ipa
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: isusapp.ipa
-          path: ios/build/
+ 

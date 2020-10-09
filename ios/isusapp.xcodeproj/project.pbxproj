@@ -900,7 +900,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODEPUSH_KEY = "usV-VwPza6bK3TYUX81P3oa-Z5p4skSk74HLF";
 				CODE_SIGN_ENTITLEMENTS = isusapp/iSUS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3.3.0;
 				DEVELOPMENT_TEAM = XT8X924G47;
 				INFOPLIST_FILE = isusapp/Info.plist;
@@ -1052,7 +1052,7 @@
 				MARKETING_VERSION = 3.3.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.esp.isus.OneSignalNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esp.isus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1074,7 +1074,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3.3.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1085,7 +1085,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 3.3.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.esp.isus.OneSignalNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esp.isus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

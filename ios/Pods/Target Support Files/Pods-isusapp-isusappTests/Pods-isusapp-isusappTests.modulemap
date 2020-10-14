@@ -1,0 +1,6 @@
+module Pods_isusapp_isusappTests {
+  umbrella header "Pods-isusapp-isusappTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

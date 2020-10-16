@@ -7,6 +7,8 @@ jobs:
   ios:
     name: Build iOS
     runs-on: macos-latest
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     steps: 
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -30,11 +32,11 @@ jobs:
   #         name: isusapp.ipa
   #         path: ios/build/
       - name: Notify on Slack
-          uses: act10ns/slack@v1
-          with:
-            status: ${{ job.status }}
-            steps: ${{ toJson(steps) }}
-          if: always()
+        uses: act10ns/slack@v1
+        with:
+          status: ${{ job.status }}
+          steps: ${{ toJson(steps) }}
+        if: always()
   android:
     name: Build Android
     runs-on: ubuntu-latest

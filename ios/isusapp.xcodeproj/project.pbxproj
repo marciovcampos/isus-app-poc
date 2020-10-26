@@ -382,7 +382,7 @@
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = XT8X924G47;
 						LastSwiftMigration = 1120;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -396,7 +396,7 @@
 					3222909F2497B3B3001FFC3C = {
 						CreatedOnToolsVersion = 11.5;
 						DevelopmentTeam = XT8X924G47;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -866,7 +866,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODEPUSH_KEY = "usV-VwPza6bK3TYUX81P3oa-Z5p4skSk74HLF";
 				CODE_SIGN_ENTITLEMENTS = isusapp/iSUS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3.3.0;
 				DEVELOPMENT_TEAM = XT8X924G47;
 				ENABLE_BITCODE = NO;
@@ -900,7 +900,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODEPUSH_KEY = "usV-VwPza6bK3TYUX81P3oa-Z5p4skSk74HLF";
 				CODE_SIGN_ENTITLEMENTS = isusapp/iSUS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3.3.0;
 				DEVELOPMENT_TEAM = XT8X924G47;
 				INFOPLIST_FILE = isusapp/Info.plist;
@@ -914,6 +915,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.esp.isus;
 				PRODUCT_NAME = iSUS;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1041,7 +1043,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3.3.0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = XT8X924G47;
@@ -1074,7 +1076,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3.3.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

@@ -866,6 +866,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODEPUSH_KEY = "usV-VwPza6bK3TYUX81P3oa-Z5p4skSk74HLF";
 				CODE_SIGN_ENTITLEMENTS = isusapp/iSUS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3.3.0;
 				DEVELOPMENT_TEAM = XT8X924G47;
@@ -885,6 +886,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.esp.isus;
 				PRODUCT_NAME = iSUS;
+				PROVISIONING_PROFILE_SPECIFIER = bitrise_deploy_isus_distribution;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -900,7 +902,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODEPUSH_KEY = "usV-VwPza6bK3TYUX81P3oa-Z5p4skSk74HLF";
 				CODE_SIGN_ENTITLEMENTS = isusapp/iSUS.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3.3.0;
 				DEVELOPMENT_TEAM = XT8X924G47;
@@ -915,7 +917,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.esp.isus;
 				PRODUCT_NAME = iSUS;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = bitrise_deploy_isus_distribution;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1043,6 +1045,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3.3.0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1056,6 +1059,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.esp.isus.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = bitrise_deploy_isus_onesignal;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1076,6 +1080,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3.3.0;
@@ -1089,6 +1094,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.esp.isus.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = bitrise_deploy_isus_onesignal;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;

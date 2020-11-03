@@ -1,6 +1,0 @@
-module Pods_isusapp {
-  umbrella header "Pods-isusapp-umbrella.h"
-
-  export *
-  module * { export * }
-}

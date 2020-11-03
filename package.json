@@ -1,6 +1,6 @@
 {
   "name": "iSUS",
-  "version": "3.11.0",
+  "version": "3.11.69",
   "private": true,
   "scripts": {
     "android": "cross-env ENVFILE=.env.dev react-native run-android",
@@ -12,7 +12,8 @@
     "start": "react-native start",
     "fix": "yarn lint --fix",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "postversion": "react-native-version"
   },
   "dependencies": {
     "@paralleldrive/feature-toggles": "^1.0.4",

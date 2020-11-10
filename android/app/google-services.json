@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "593732725459",
+    "firebase_url": "https://isus-app-poc.firebaseio.com",
+    "project_id": "isus-app-poc",
+    "storage_bucket": "isus-app-poc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:593732725459:android:9ed8cfb2ab0ec8ee504226",
+        "android_client_info": {
+          "package_name": "com.esp.isus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "593732725459-1jmo2nsbavpvfbn1ir5dnruiaplfmo6e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhmjOOx4zwMn6b-FJSNGmM3T73IrlQEpg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "593732725459-1jmo2nsbavpvfbn1ir5dnruiaplfmo6e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,6 @@
 {
   "name": "iSUS",
-  "version": "3.11.71",
+  "version": "3.11.72",
   "private": true,
   "scripts": {
     "android": "cross-env ENVFILE=.env.dev react-native run-android",
@@ -90,6 +90,7 @@
     "prettier-eslint": "^9.0.0",
     "react-native-rename": "^2.4.1",
     "react-native-svg-transformer": "^0.14.3",
+    "react-native-version": "^4.0.0",
     "react-test-renderer": "16.11.0",
     "reactotron-react-native": "^5.0.0"
   },

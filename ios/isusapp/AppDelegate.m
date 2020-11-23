@@ -6,7 +6,6 @@
 #import <React/RCTRootView.h>
 #import <React/RCTLinkingManager.h>
 
-
 #import <AppCenterReactNative.h>
 #import <AppCenterReactNativeAnalytics.h>
 #import <AppCenterReactNativeCrashes.h>
@@ -37,14 +36,16 @@ static void InitializeFlipper(UIApplication *application) {
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-  if ([FIRApp defaultApp] == nil) {
-    [FIRApp configure];
-  }
+{  
   
 [AppCenterReactNative register];
 [AppCenterReactNativeAnalytics registerWithInitiallyEnabled:true];
 [AppCenterReactNativeCrashes registerWithAutomaticProcessing];
+
+if ([FIRApp defaultApp] == nil) {
+    [FIRApp configure];
+  }
+
 #if DEBUG
   InitializeFlipper(application);
 #endif

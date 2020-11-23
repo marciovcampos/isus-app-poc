@@ -3,6 +3,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 // import AppDrawerScreen from './appDrawerScreen';
 import { createStackNavigator } from '@react-navigation/stack';
+import analytics from '@react-native-firebase/analytics';
 import TopTab from './appTopTab.routes';
 import Educacao from '../assets/icons/educacao.svg';
 import Pesquisa from '../assets/icons/pesquisa.svg';
@@ -67,6 +68,15 @@ export default function AppTabScreen() {
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => <Icon name="home" color={color} size={20} />
         }}
+        listeners={() => ({
+          tabPress: () => {
+            analytics().logEvent('Home2', {
+              event: 'Click',
+              category: 'Home'
+            });
+            console.log('Home2');
+          }
+        })}
       />
 
       {/* <AppTab.Screen
@@ -85,6 +95,15 @@ export default function AppTabScreen() {
           tabBarLabel: 'Educação',
           tabBarIcon: ({ color }) => <Educacao color={color} size={20} />
         }}
+        listeners={() => ({
+          tabPress: () => {
+            analytics().logEvent('Educacao2', {
+              event: 'Click',
+              category: 'Home'
+            });
+            console.log('Educacao2');
+          }
+        })}
       />
       <AppTab.Screen
         name="Search"
@@ -93,6 +112,15 @@ export default function AppTabScreen() {
           tabBarLabel: 'Pesquisa',
           tabBarIcon: ({ color }) => <Pesquisa color={color} size={20} />
         }}
+        listeners={() => ({
+          tabPress: () => {
+            analytics().logEvent('Pesquisa2', {
+              event: 'Click',
+              category: 'Home'
+            });
+            console.log('Pesquisa2');
+          }
+        })}
       />
     </AppTab.Navigator>
   );

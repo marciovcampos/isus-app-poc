@@ -110,14 +110,14 @@ export default function HomeScreen() {
           <Button
             title="Call Analytics 2"
             onPress={async () => await analytics().logEvent('basket5', {
-              item: 'mens grey t-shirt',
+              event: 'click',
             })
             }
           />
           <Button
-            title="Call Analytics 3"
-            onPress={async () => await analytics().logEvent('basket6', {
-              item: 'mens grey t-shirt',
+            title="Call Home"
+            onPress={async () => await analytics().logScreenView({
+              screen_name: 'home',
             })
             }
           />

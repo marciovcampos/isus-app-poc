@@ -1,13 +1,15 @@
+/* eslint-disable no-return-await */
 import React, {
   useLayoutEffect, useCallback, useState
 } from 'react';
 import {
-  ScrollView, TouchableOpacity, Dimensions
+  ScrollView, TouchableOpacity, Dimensions, Button, Alert
 } from 'react-native';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import AsyncStorage from '@react-native-community/async-storage';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Feature } from '@paralleldrive/react-feature-toggles';
+import analytics from '@react-native-firebase/analytics';
 import ForcaTarefaAntiCorona from './forcatarefaanticorona';
 import ProviderDeVersaoDoManejo from '../ClinicalManagement/contexto/contextoVersaoManejo';
 import Servicos from './Servicos/servicos';
@@ -98,30 +100,48 @@ export default function HomeScreen() {
 
   return (
     <>
-      { tokenUsuario ? <ExibirUsuario dados={dadosUsuario} /> : <></> }
+      {tokenUsuario ? <ExibirUsuario dados={dadosUsuario} /> : <></>}
       <ProviderDeVersaoDoManejo>
-      <BarraDeStatus backgroundColor={tokenUsuario ? '#FFF' : '#4CAF50'} barStyle={tokenUsuario ? 'dark-content' : 'light-content'} />
-      <ScrollView style={{ backgroundColor: '#fff', flex: 1 }}>
-        <Carrossel sliderWidth={width} itemWidth={width} />
-        <Feature
-          name="302"
-          inactiveComponent={() => <Servicos navigation={navigation} />}
-          activeComponent={() => <NovoServicos navigation={navigation} />}
-        />
-        {
-          tokenUsuario && (
-            <Feature
-              name="306"
-              activeComponent={() => <MeusConteudos />}
-            />
-          )
-        }
-        <Feature
-          name="315"
-          inactiveComponent={() => <ForcaTarefaAntiCorona navigation={navigation} />}
-          activeComponent={() => <NovaForcaTarefa navigation={navigation} />}
-        />
-      </ScrollView>
+        <BarraDeStatus backgroundColor={tokenUsuario ? '#FFF' : '#4CAF50'} barStyle={tokenUsuario ? 'dark-content' : 'light-content'} />
+        <ScrollView style={{ backgroundColor: '#fff', flex: 1 }}>
+
+
+          <Button title="Say Hi" onPress={() => Alert.alert('Hi.')} />
+          <Button
+            title="Call Analytics 2"
+            onPress={async () => await analytics().logEvent('basket5', {
+              item: 'mens grey t-shirt',
+            })
+            }
+          />
+          <Button
+            title="Call Analytics 3"
+            onPress={async () => await analytics().logEvent('basket6', {
+              item: 'mens grey t-shirt',
+            })
+            }
+          />
+
+          <Carrossel sliderWidth={width} itemWidth={width} />
+          <Feature
+            name="302"
+            inactiveComponent={() => <Servicos navigation={navigation} />}
+            activeComponent={() => <NovoServicos navigation={navigation} />}
+          />
+          {
+            tokenUsuario && (
+              <Feature
+                name="306"
+                activeComponent={() => <MeusConteudos />}
+              />
+            )
+          }
+          <Feature
+            name="315"
+            inactiveComponent={() => <ForcaTarefaAntiCorona navigation={navigation} />}
+            activeComponent={() => <NovaForcaTarefa navigation={navigation} />}
+          />
+        </ScrollView>
       </ProviderDeVersaoDoManejo>
     </>
   );

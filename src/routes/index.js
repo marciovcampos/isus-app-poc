@@ -2,6 +2,7 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Feature } from '@paralleldrive/react-feature-toggles';
+import analytics from '@react-native-firebase/analytics';
 import Description from '../pages/Content/Description';
 import Welcome from '../pages/Welcome';
 import AppDrawerScreen from './appDrawerScreen.routes';
@@ -40,7 +41,22 @@ function Cadastro() {
 
 export default function App({ navigationRef }) {
   return (
-    <NavigationContainer ref={navigationRef}>
+    <NavigationContainer
+      ref={navigationRef}
+      onStateChange={async () => {
+        // const previousRouteName = routeNameRef.current;
+        // const currentRouteName = getActiveRouteName(state);
+        const previousRouteName = 'rota2';
+        const currentRouteName = 'rota10';
+
+        if (previousRouteName !== currentRouteName) {
+          await analytics().logScreenView({
+            screen_name: currentRouteName,
+            screen_class: currentRouteName,
+          });
+        }
+      }}
+    >
       <RootStack.Navigator>
         <RootStack.Screen
           name="App"

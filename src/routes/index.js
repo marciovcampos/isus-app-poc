@@ -40,21 +40,25 @@ function Cadastro() {
 }
 
 export default function App({ navigationRef }) {
+  const routeNameRef = React.useRef();
   return (
     <NavigationContainer
       ref={navigationRef}
-      onStateChange={async () => {
-        // const previousRouteName = routeNameRef.current;
-        // const currentRouteName = getActiveRouteName(state);
-        const previousRouteName = 'rota2';
-        const currentRouteName = 'rota10';
+      // eslint-disable-next-line no-return-assign
+      onReady={() => routeNameRef.current = navigationRef.current.getCurrentRoute().name}
+      onStateChange={() => {
+        const previousRouteName = routeNameRef.current;
+        const currentRouteName = navigationRef.current.getCurrentRoute().name;
 
         if (previousRouteName !== currentRouteName) {
-          await analytics().logScreenView({
+          analytics().logScreenView({
             screen_name: currentRouteName,
             screen_class: currentRouteName,
           });
         }
+
+        // Save the current route name for later comparision
+        routeNameRef.current = currentRouteName;
       }}
     >
       <RootStack.Navigator>

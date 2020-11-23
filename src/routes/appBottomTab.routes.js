@@ -3,7 +3,6 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 // import AppDrawerScreen from './appDrawerScreen';
 import { createStackNavigator } from '@react-navigation/stack';
-import analytics from '@react-native-firebase/analytics';
 import TopTab from './appTopTab.routes';
 import Educacao from '../assets/icons/educacao.svg';
 import Pesquisa from '../assets/icons/pesquisa.svg';
@@ -11,6 +10,7 @@ import Pesquisa from '../assets/icons/pesquisa.svg';
 import ContentScreen from '../pages/Content';
 
 import HomeScreen from '../pages/Home';
+import { analyticsData } from '../utils/analytics';
 
 const HomeStack = createStackNavigator();
 let title = '';
@@ -70,11 +70,7 @@ export default function AppTabScreen() {
         }}
         listeners={() => ({
           tabPress: () => {
-            analytics().logEvent('Home2', {
-              event: 'Click',
-              category: 'Home'
-            });
-            console.log('Home2');
+            analyticsData('Home3', 'Click', 'Home');
           }
         })}
       />
@@ -97,11 +93,7 @@ export default function AppTabScreen() {
         }}
         listeners={() => ({
           tabPress: () => {
-            analytics().logEvent('Educacao2', {
-              event: 'Click',
-              category: 'Home'
-            });
-            console.log('Educacao2');
+            analyticsData('Educacao3', 'Click', 'Home');
           }
         })}
       />
@@ -114,11 +106,7 @@ export default function AppTabScreen() {
         }}
         listeners={() => ({
           tabPress: () => {
-            analytics().logEvent('Pesquisa2', {
-              event: 'Click',
-              category: 'Home'
-            });
-            console.log('Pesquisa2');
+            analyticsData('Pesquisa3', 'Click', 'Home');
           }
         })}
       />

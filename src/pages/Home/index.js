@@ -108,16 +108,16 @@ export default function HomeScreen() {
 
           <Button title="Say Hi" onPress={() => Alert.alert('Hi.')} />
           <Button
-            title="Call Analytics 2"
-            onPress={async () => await analytics().logEvent('basket5', {
+            title="Call LogEvent"
+            onPress={async () => await analytics().logEvent('botao_home', {
               event: 'click',
             })
             }
           />
           <Button
-            title="Call Home"
+            title="Call LogScreenView"
             onPress={async () => await analytics().logScreenView({
-              screen_name: 'home',
+              screen_name: 'screen_botao_home',
             })
             }
           />

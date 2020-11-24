@@ -70,7 +70,7 @@ export default function AppTabScreen() {
         }}
         listeners={() => ({
           tabPress: () => {
-            analyticsData('Home3', 'Click', 'Home');
+            analyticsData('Home', 'Click', 'Home');
           }
         })}
       />
@@ -93,7 +93,7 @@ export default function AppTabScreen() {
         }}
         listeners={() => ({
           tabPress: () => {
-            analyticsData('Educacao3', 'Click', 'Home');
+            analyticsData('Educacao', 'Click', 'Home');
           }
         })}
       />
@@ -106,7 +106,7 @@ export default function AppTabScreen() {
         }}
         listeners={() => ({
           tabPress: () => {
-            analyticsData('Pesquisa3', 'Click', 'Home');
+            analyticsData('Pesquisa', 'Click', 'Home');
           }
         })}
       />

@@ -9,7 +9,7 @@ const analyticsData = async (
             eventy,
             category,
         });
-        console.log(`Firebase Analytics - ${name}`);
+        console.log(`FA LogEvent - ${name}`);
     } catch (e) {
         console.log(e);
     }

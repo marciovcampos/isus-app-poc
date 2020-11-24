@@ -55,6 +55,7 @@ export default function App({ navigationRef }) {
             screen_name: currentRouteName,
             screen_class: currentRouteName,
           });
+          console.log(`FA LogScreen - ${currentRouteName}`);
         }
 
         // Save the current route name for later comparision

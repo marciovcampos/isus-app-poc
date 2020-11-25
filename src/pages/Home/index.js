@@ -10,6 +10,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Feature } from '@paralleldrive/react-feature-toggles';
 import analytics from '@react-native-firebase/analytics';
+import crashlytics from '@react-native-firebase/crashlytics';
 import ForcaTarefaAntiCorona from './forcatarefaanticorona';
 import ProviderDeVersaoDoManejo from '../ClinicalManagement/contexto/contextoVersaoManejo';
 import Servicos from './Servicos/servicos';
@@ -23,6 +24,8 @@ import MeusConteudos from './MeusConteudos';
 import NovaForcaTarefa from './ForcaTarefa/NovaForcaTarefa';
 
 export default function HomeScreen() {
+  crashlytics().log('App Montado.');
+
   const navigation = useNavigation();
 
   async function redirectToWelcome() {
@@ -120,6 +123,15 @@ export default function HomeScreen() {
               screen_name: 'screen_botao_home',
             })
             }
+          />
+          <Button title="Test Crash" onPress={() => { console.log('Test Crash'); crashlytics().crash(); }} />
+          <Button
+            title="Crash Personalizado"
+            onPress={() => {
+              console.log('Crash Personalizado');
+              const err = new Error('Crash Personalizado');
+              crashlytics().recordError(err);
+            }}
           />
 
           <Carrossel sliderWidth={width} itemWidth={width} />
